@@ -53,7 +53,7 @@ end
 def update_submodules()
   puts "Updating git submodules"
   `git submodule update --init`
-  `cd emacs.d/vendor/rinari && git submodule update --init`
+  # add any submodules here if you ever get any
 end
 
 def replace_file(target, source)

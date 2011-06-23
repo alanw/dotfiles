@@ -1,4 +1,4 @@
-source ~/dotfiles/.git-completion.sh
+source ~/.git-completion.sh
 
 export PATH=/usr/local/bin:$PATH
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '

@@ -1,5 +1,6 @@
 source ~/.git-completion.sh
 
+export EDITOR="mate -w"
 export PATH=/usr/local/bin:$PATH
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
@@ -7,5 +8,3 @@ export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 CLICOLOR=1
 #sets up the color scheme for list export
 LSCOLORS=gxfxcxdxbxegedabagacad
-
-alias debian='ssh debian'

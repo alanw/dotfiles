@@ -3,21 +3,37 @@ source ~/.git-completion.sh
 export PATH=/usr/local/bin:$PATH
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
-#enables color in the terminal bash shell export
-CLICOLOR=1
-#sets up the color scheme for list export
-LSCOLORS=gxfxcxdxbxegedabagacad
+# enables color in the terminal bash shell export
+export CLICOLOR=1
+
+# sets up the color scheme for list export
+if [ "$OS" = "Darwin" ]; then
+    export LSCOLORS=dxfxcxdxbxegedabagacad
+    # export LSCOLORS='gxfxcxdxbxegedabagacad'
+fi
 
 #-------------------------------------------------------------
 # The 'ls' family (this assumes you use a recent GNU ls)
 #-------------------------------------------------------------
-alias ll="ls -l"
-alias ls='ls -hF'  # add colors for filetype recognition
-alias la='ls -Al'          # show hidden files
+if [ "$OS" = "Linux" ]; then
+    alias ll="ls --color=auto -l -h -F"
+    alias la="ls --color=auto -l -h -A -F"
+    alias ls="ls --color=auto -h -F"
+elif [ "$OS" = "Darwin" ]; then
+    alias ll="ls -G -h -l -F"
+    alias ll="ls -G -h -l -A -F"
+    alias ls="ls -G -h -F"
+fi
+
 alias tree='tree -Csu'     # nice alternative to 'recursive ls'
 
 alias du='du -kh'       # Makes a more readable output.
 alias df='df -kTh'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cd..='cd ..'
+alias cd...='cd ../..'
 
 function extract()      # Handy Extract Program.
 {

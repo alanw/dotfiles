@@ -7,7 +7,7 @@ export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 export CLICOLOR=1
 
 # sets up the color scheme for list export
-if [ "$OS" = "Darwin" ]; then
+if [ $(uname) = "Darwin" ]; then
     export LSCOLORS=dxfxcxdxbxegedabagacad
     # export LSCOLORS='gxfxcxdxbxegedabagacad'
 fi
@@ -15,7 +15,7 @@ fi
 #-------------------------------------------------------------
 # The 'ls' family (this assumes you use a recent GNU ls)
 #-------------------------------------------------------------
-if [ "$OS" = "Darwin" ]; then
+if [ $(uname) = "Darwin" ]; then
     alias ll="ls -G -h -l -F"
     alias ll="ls -G -h -l -A -F"
     alias ls="ls -G -h -F"

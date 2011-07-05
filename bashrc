@@ -15,14 +15,14 @@ fi
 #-------------------------------------------------------------
 # The 'ls' family (this assumes you use a recent GNU ls)
 #-------------------------------------------------------------
-if [ "$OS" = "Linux" ]; then
-    alias ll="ls --color=auto -l -h -F"
-    alias la="ls --color=auto -l -h -A -F"
-    alias ls="ls --color=auto -h -F"
-elif [ "$OS" = "Darwin" ]; then
+if [ "$OS" = "Darwin" ]; then
     alias ll="ls -G -h -l -F"
     alias ll="ls -G -h -l -A -F"
     alias ls="ls -G -h -F"
+else
+    alias ll="ls --color=auto -l -h -F"
+    alias la="ls --color=auto -l -h -A -F"
+    alias ls="ls --color=auto -h -F"
 fi
 
 alias tree='tree -Csu'     # nice alternative to 'recursive ls'
@@ -63,4 +63,3 @@ function ff() { find . -type f -iname '*'$*'*' -ls ; }
 # Find a file with pattern $1 in name and Execute $2 on it:
 function fe()
 { find . -type f -iname '*'${1:-}'*' -exec ${2:-file} {} \;  ; }
-

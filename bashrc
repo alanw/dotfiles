@@ -3,6 +3,13 @@ source ~/.git-completion.sh
 export PATH=/usr/local/bin:$PATH
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
+# horrible python path
+export PYTHONPATH=.:~/spotify/supervision3:~/spotify/spotify-common\
+:~/spotify/gevent-zeromq:~/spotify/gevsubprocess/src:~/spotify/presence\
+:~/spotify/pycrypto:~/spotify/paramiko:~/spotify/logarchive:~/spotify/dns\
+:~/spotify/rambo:~/spotify/boto2:~/spotify/protobuf/python\
+:~/spotify/hermes/python
+
 # enables color in the terminal bash shell export
 export CLICOLOR=1
 

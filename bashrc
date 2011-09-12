@@ -8,7 +8,8 @@ export PYTHONPATH=.:~/spotify/supervision3:~/spotify/spotify-common\
 :~/spotify/gevent-zeromq:~/spotify/gevsubprocess/src:~/spotify/presence\
 :~/spotify/pycrypto:~/spotify/paramiko:~/spotify/logarchive:~/spotify/dns\
 :~/spotify/rambo:~/spotify/boto2:~/spotify/protobuf/python\
-:~/spotify/hermes/python
+:~/spotify/hermes/python:~/spotify/statistics/python\
+:~/spotify/virtenvtools/:~/spotify/libvirt
 
 # enables color in the terminal bash shell export
 export CLICOLOR=1

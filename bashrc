@@ -3,13 +3,18 @@ source ~/.git-completion.sh
 export PATH=/usr/local/bin:$PATH
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 # horrible python path
-export PYTHONPATH=.:~/spotify/supervision3:~/spotify/spotify-common\
-:~/spotify/gevent-zeromq:~/spotify/gevsubprocess/src:~/spotify/presence\
+export PYTHONPATH=.:~/spotify/supervision2:~/spotify/spotify-common\
+:~/spotify/gevent-extra:~/spotify/gevsubprocess/src:~/spotify/presence\
 :~/spotify/pycrypto:~/spotify/paramiko:~/spotify/logarchive:~/spotify/dns\
 :~/spotify/rambo:~/spotify/boto2:~/spotify/protobuf/python\
 :~/spotify/hermes/python:~/spotify/statistics/python\
-:~/spotify/virtenvtools/:~/spotify/libvirt
+:~/spotify/twisted-extra::~/spotify/radio:~/spotify/radio-index\
+:~/spotify/gevent-zeromq
 
 # enables color in the terminal bash shell export
 export CLICOLOR=1

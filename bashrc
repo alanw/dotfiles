@@ -12,9 +12,9 @@ export PYTHONPATH=.:~/spotify/supervision2:~/spotify/spotify-common\
 :~/spotify/gevent-extra:~/spotify/gevsubprocess/src:~/spotify/presence\
 :~/spotify/pycrypto:~/spotify/paramiko:~/spotify/logarchive:~/spotify/dns\
 :~/spotify/rambo:~/spotify/boto2:~/spotify/protobuf/python\
-:~/spotify/hermes/python:~/spotify/statistics/python\
+:~/spotify/hermes-python:~/spotify/statistics/python\
 :~/spotify/twisted-extra::~/spotify/radio:~/spotify/radio-index\
-:~/spotify/gevent-zeromq:~/spotify/pubsub:~/spotify/federator
+:~/spotify/gevent-zeromq:~/spotify/pubsub
 
 # enables color in the terminal bash shell export
 export CLICOLOR=1
@@ -25,7 +25,7 @@ if [ $(uname) = "Darwin" ]; then
     # export LSCOLORS='gxfxcxdxbxegedabagacad'
 fi
 
-sudo scutil --set HostName AlanMac.local
+# sudo scutil --set HostName AlanMac.local
 
 #-------------------------------------------------------------
 # The 'ls' family (this assumes you use a recent GNU ls)

@@ -1,6 +1,7 @@
 source ~/.git-completion.sh
 
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/lib:$PATH
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 export LANG=en_US.UTF-8

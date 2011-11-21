@@ -9,9 +9,6 @@
 [push]
     default = tracking
 
-[branch "master"]
-    rebase = true
-
 [alias]
     b = branch -va
     f = fetch
@@ -44,9 +41,6 @@
 
 [push]
     default = tracking
-
-[branch "master"]
-    rebase = true
 
 [color]
     ui = auto

@@ -1,8 +1,12 @@
 source ~/.git-completion.sh
 
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/lib:$PATH
+# export PATH=/usr/local/bin:$PATH
+# export PATH=/usr/local/lib:$PATH
+# export DYLD_LIBRARY_PATH=/opt/local/lib/
 export PATH=/usr/gcc-4.7/bin:$PATH
+# export PATH=$PATH:/opt/local/lib
+# export PATH=$PATH:/opt/local/include
+# export PATH=/Users/alan/spotify/sparkey:$PATH
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 
@@ -15,9 +19,18 @@ export PYTHONPATH=.:~/spotify/supervision2:~/spotify/spotify-common\
 :~/spotify/gevent-extra:~/spotify/gevsubprocess/src:~/spotify/presence\
 :~/spotify/pycrypto:~/spotify/paramiko:~/spotify/logarchive:~/spotify/dns\
 :~/spotify/rambo:~/spotify/boto2:~/spotify/protobuf7/python\
-:~/spotify/hermes-python:~/spotify/statistics/python\
+:~/spotify/hermes-python:~/spotify/hermes-python2:~/spotify/statistics/python\
 :~/spotify/twisted-extra::~/spotify/radio:~/spotify/radio-index\
-:~/spotify/gevent-zeromq:~/spotify/pubsub:~/spotify/dht-python
+:~/spotify/gevent-zeromq:~/spotify/pubsub:~/spotify/dht-python\
+:~/spotify/sparkey:~/spotify/metadata/python:~/spotify/slask\
+:~/spotify/health:~/spotify/abtesting:~/spotify/health:~/spotify/log-parser\
+:~/spotify/health:~/spotify/appstore:~/spotify/health:~/spotify/spotify-app-tools\
+:~/spotify/jsdoc3-python:~/spotify/psycopg-extra:~/spotify/discovery\
+:~/spotify/sharded-db:~/spotify/facebook:~/spotify/http:~/spotify/oauth\
+:~/spotify/product:~/spotify/arrow:~/spotify/psycopg2:~/spotify/social\
+:~/spotify/user2:~/spotify/project-skeleton
+
+ulimit -n 10000
 
 # enables color in the terminal bash shell export
 export CLICOLOR=1

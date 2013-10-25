@@ -3,16 +3,26 @@ source ~/.git-completion.sh
 # export PATH=/usr/local/bin:$PATH
 # export PATH=/usr/local/lib:$PATH
 # export DYLD_LIBRARY_PATH=/opt/local/lib/
-export PATH=/usr/gcc-4.7/bin:$PATH
+# export PATH=/usr/local/lib:/usr/local/include:/usr/gcc-4.7/bin\
+# :$PATH
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig\
+:/usr/local/lib/pkgconfig:/opt/local/lib/pkgconfig
+
 # export PATH=$PATH:/opt/local/lib
 # export PATH=$PATH:/opt/local/include
 # export PATH=/Users/alan/spotify/sparkey:$PATH
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+# export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+
+# bash completion for ssh hosts
+SSH_COMPLETE=( $(cat ~/.ssh/known_hosts | cut -f 1 -d " " | sed -e s/,.*//g | uniq ) )
+complete -o bashdefault -W "${SSH_COMPLETE[*]}" ssh
 
 # horrible python path
 export PYTHONPATH=.:~/spotify/supervision2:~/spotify/spotify-common\
@@ -28,7 +38,10 @@ export PYTHONPATH=.:~/spotify/supervision2:~/spotify/spotify-common\
 :~/spotify/jsdoc3-python:~/spotify/psycopg-extra:~/spotify/discovery\
 :~/spotify/sharded-db:~/spotify/facebook:~/spotify/http:~/spotify/oauth\
 :~/spotify/product:~/spotify/arrow:~/spotify/psycopg2:~/spotify/social\
-:~/spotify/user2:~/spotify/project-skeleton
+:~/spotify/user2:~/spotify/project-skeleton:~/spotify/username:~/spotify/pycassa\
+:~/spotify/build:~/spotify/boink/python:~/spotify/boink/deps/yapps2\
+:~/spotify/user-policy:~/spotify/fitness:~/spotify/userinfo\
+:~/spotify/gatekeeper
 
 ulimit -n 10000
 
@@ -55,6 +68,8 @@ else
     alias la="ls --color=auto -l -h -A -F"
     alias ls="ls --color=auto -h -F"
 fi
+
+alias spotify_peers="lsof -i -n -l|grep Spotify|cut -d\">\" -f2|cut -d\" \" -f1|cut -d\":\" -f1|grep [0-9]|nslookup -timeout=1 $1|grep \"name =\"|cut -d \"=\" -f2|sort|sed s/.$//"
 
 alias tree='tree -Csu'     # nice alternative to 'recursive ls'
 

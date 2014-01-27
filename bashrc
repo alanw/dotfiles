@@ -1,19 +1,19 @@
 source ~/.git-completion.sh
 
-# export PATH=/usr/local/bin:$PATH
-# export PATH=/usr/local/lib:$PATH
-# export DYLD_LIBRARY_PATH=/opt/local/lib/
-# export PATH=/usr/local/lib:/usr/local/include:/usr/gcc-4.7/bin\
-# :$PATH
+export PATH=$HOME/.nodenv/bin:$PATH
 
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig\
 :/usr/local/lib/pkgconfig:/opt/local/lib/pkgconfig
 
-# export PATH=$PATH:/opt/local/lib
-# export PATH=$PATH:/opt/local/include
-# export PATH=/Users/alan/spotify/sparkey:$PATH
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-# export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
 
 export LANG=en_US.UTF-8
@@ -41,7 +41,7 @@ export PYTHONPATH=.:~/spotify/supervision2:~/spotify/spotify-common\
 :~/spotify/user2:~/spotify/project-skeleton:~/spotify/username:~/spotify/pycassa\
 :~/spotify/build:~/spotify/boink/python:~/spotify/boink/deps/yapps2\
 :~/spotify/user-policy:~/spotify/fitness:~/spotify/userinfo\
-:~/spotify/gatekeeper
+:~/spotify/routine:~/spotify/login-trial
 
 ulimit -n 10000
 

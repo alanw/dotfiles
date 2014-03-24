@@ -2,6 +2,8 @@ source ~/.git-completion.sh
 
 export PATH=$HOME/.nodenv/bin:$PATH
 
+export PATH=/Library/PostgreSQL/9.2/bin:$PATH
+
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig\
 :/usr/local/lib/pkgconfig:/opt/local/lib/pkgconfig
 
@@ -12,9 +14,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
+export CFLAGS=-Qunused-arguments
+export CPPFLAGS=-Qunused-arguments
+
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -41,7 +46,8 @@ export PYTHONPATH=.:~/spotify/supervision2:~/spotify/spotify-common\
 :~/spotify/user2:~/spotify/project-skeleton:~/spotify/username:~/spotify/pycassa\
 :~/spotify/build:~/spotify/boink/python:~/spotify/boink/deps/yapps2\
 :~/spotify/user-policy:~/spotify/fitness:~/spotify/userinfo\
-:~/spotify/routine:~/spotify/login-trial
+:~/spotify/routine:~/spotify/login-trial:~/spotify/routine:~/spotify/notifications\
+:~/spotify/mercury/python
 
 ulimit -n 10000
 
